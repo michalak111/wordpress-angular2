@@ -1,6 +1,6 @@
 # WPNG2
 
-A WordPress theme that runs off of an Angular 2 app.
+A WordPress theme that runs off of an Angular 2 app. Built for the tutorial http://doppiaeast.com/article/angular-2-wordpress-theme-setup/.
 
 To use this as a theme, you must have the WP REST API version 2 plugin installed.
 
