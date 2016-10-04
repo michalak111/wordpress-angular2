@@ -1,8 +1,5 @@
-<p>
-  post-list works!
-</p>
 <ul>
-  <li *ngFor="let post of posts">
+  <li *ngFor="let post of posts" (click)="selectPost(post.slug)">
     {{ post.title.rendered }}
   </li>
 </ul>
