@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -13,7 +12,7 @@ export class PostListComponent implements OnInit {
 
   posts: Post[];
 
-  constructor( private postsService: PostsService, private router: Router ) { }
+  constructor( private postsService: PostsService ) { }
 
   getPosts(){
     this.postsService
@@ -26,9 +25,4 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
   }
- 
-  selectPost(slug) {
-  	this.router.navigate([slug]);
-  }
-
 }

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-
+//noinspection TypeScriptCheckImport
 import { addProviders, async, inject } from '@angular/core/testing';
 import {Post} from './post';
 

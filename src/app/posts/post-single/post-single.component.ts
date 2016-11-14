@@ -15,19 +15,27 @@ export class PostSingleComponent implements OnInit {
 
   constructor( private postsService: PostsService, private route: ActivatedRoute ) { }
 
-  getPost(slug){
+  getPost(slug, type){
     this.postsService
-      .getPost(slug)
+      .getPost(slug, type)
       .subscribe(res => {
         this.post = res[0];
       });
   }
 
   ngOnInit() {
-
     this.route.params.forEach((params: Params) => {
        let slug = params['slug'];
-       this.getPost(slug)
+       let type = params['type'];
+
+        switch (type) {
+          case 'page':
+            this.getPost(slug,'pages');
+            break;
+          case 'post':
+            this.getPost(slug,'posts');
+            break;
+        }
     });
 
   }

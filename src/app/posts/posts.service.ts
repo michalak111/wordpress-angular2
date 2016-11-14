@@ -10,7 +10,7 @@ import { Post } from './post';
 @Injectable()
 export class PostsService {
 
-  private _wpBase = "http://{YOUR_SITE_HERE}.com/wp-json/wp/v2/";
+  private _wpBase = "http://angular.ivn-works.com/wp-json/wp/v2/";
 
   constructor(private http: Http) { }
 
@@ -22,12 +22,9 @@ export class PostsService {
 
   }
 
-  getPost(slug): Observable<Post> {
-
+  getPost(slug,type): Observable<Post> {
       return this.http
-        .get(this._wpBase + `posts?filter[name]=${slug}`)
+        .get(this._wpBase + `${type}?filter[name]=${slug}`)
         .map((res: Response) => res.json());
-
   }
-
 }

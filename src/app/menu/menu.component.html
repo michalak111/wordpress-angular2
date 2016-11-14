@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav">
+    <li *ngFor="let single of menu">
+        <a [routerLink]="['/page/', single.object_slug]">{{single.title}}</a>
+    </li>
+</ul>

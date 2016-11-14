@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostSingleComponent } from './posts/post-single/post-single.component';
+import {MenuComponent} from "./menu/menu.component";
 
 const routes: Routes = [
   {
@@ -10,9 +11,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: ':slug',
+    path: ':type/:slug',
     component: PostSingleComponent
-  }
+  },
 ];
 
 @NgModule({
