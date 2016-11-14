@@ -13,3 +13,11 @@ Inside of src/app/posts, open posts.service.ts. On the line where it says `priva
 After you've done that, run `ng build` from your command line. This will output a `dist` folder. Upload index.php, styles.css, functions.php, and the dist folder to your theme directory on your server. You should be good to go!
 
 This project will play nice with the Angular CLI.
+
+# Improvements
+
+- added menu component
+
+You must have instaled https://pl.wordpress.org/plugins/wp-rest-api-v2-menus/
+
+Inside app/menu/menu.service.ts set your wordpress adress inside varible - private _wpBase = "http://{YOUR_SITE_HERE}/wp-json/wp-api-menus/v2/menus/";
