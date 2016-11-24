@@ -10,7 +10,7 @@ import { Post } from './post';
 @Injectable()
 export class PostsService {
 
-  private _wpBase = "http://angular.ivn-works.com/wp-json/wp/v2/";
+  private _wpBase = "http://a2wp.dev/wp-json/wp/v2/";
 
   constructor(private http: Http) { }
 

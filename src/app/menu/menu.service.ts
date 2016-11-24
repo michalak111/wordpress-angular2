@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class MenuService{
-    private _wpBase = "http://angular.ivn-works.com/wp-json/wp-api-menus/v2/menus/";
+    private _wpBase = "http://a2wp.dev/wp-json/wp-api-menus/v2/menus/";
 
     constructor(private http: Http) { }
 
