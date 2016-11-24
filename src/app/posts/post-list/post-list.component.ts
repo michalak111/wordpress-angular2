@@ -14,11 +14,26 @@ export class PostListComponent implements OnInit {
 
   constructor( private postsService: PostsService ) { }
 
+  getThumbnail(id : number, index: number){
+    this.postsService
+        .getPostThumbnail(id)
+        .subscribe(res => {
+          this.posts[index]['postThumbnail'] = res;
+            console.log(this.posts);
+        });
+  }
+
   getPosts(){
     this.postsService
       .getPosts()
       .subscribe(res => {
         this.posts = res;
+        this.posts.forEach((el, index) => {
+            if(el['featured_media']){
+              this.getThumbnail(el['featured_media'], index);
+            }
+          }
+        );
       });
   }
 

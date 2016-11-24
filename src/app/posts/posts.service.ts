@@ -27,4 +27,10 @@ export class PostsService {
         .get(this._wpBase + `${type}?filter[name]=${slug}`)
         .map((res: Response) => res.json());
   }
+
+  getPostThumbnail(id : number) {
+      return this.http
+          .get(this._wpBase + 'media/' + id)
+          .map((res: Response) => res.json());
+  }
 }

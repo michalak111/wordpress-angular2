@@ -1,5 +1,12 @@
-<ul>
-  <li *ngFor="let post of posts">
-    <a [routerLink]="['/post/', post.slug]">{{ post.title.rendered }}</a>
-  </li>
-</ul>
+<div class="entry-blog">
+  <article class="row" *ngFor="let post of posts" style="margin-bottom: 10px">
+    <div class="col-md-3">
+      <img class="img-responsive" src="{{post.postThumbnail ? post.postThumbnail.source_url : '../../assets/img-default.png'}}">
+    </div>
+    <div class="col-md-9">
+      <h1 class="entry-title"><a [routerLink]="['/post/', post.slug]">{{ post.title.rendered }}</a></h1>
+      <div [innerHTML]="post.excerpt.rendered"></div>
+      <button class="btn btn-default">Read more</button>
+    </div>
+  </article>
+</div>
